@@ -1,34 +1,38 @@
-import { createSignal } from 'solid-js';
-import solidLogo from './assets/solid.svg';
-import viteLogo from '/vite.svg';
+import { createSignal, For } from "solid-js";
 
-function App() {
-  const [count, setCount] = createSignal(0);
+const App = () => {
+  const [items, setItems] = createSignal<Array<{ id: string; text: string }>>([]);
+
+  const addNewItemsWithAnimation = () => {
+    const newItem = {
+      id: Date.now().toString(),
+      text: `Item ${items().length + 1}`
+    };
+    
+    setItems(prev => [newItem, ...prev]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
+    <div class="p-4">
+      <button
+        onClick={addNewItemsWithAnimation}
+        class="px-4 py-2 bg-blue-500 text-white rounded mb-4"
+      >
+        Add New Item
+      </button>
+      <div class="space-y-2">
+        <For each={items()}>
+          {(item) => (
+            <div
+              class="p-4 bg-gray-100 rounded animate-slideUp"
+            >
+              {item.text}
+            </div>
+          )}
+        </For>
       </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-    </>
+    </div>
   );
-}
+};
 
 export default App;
