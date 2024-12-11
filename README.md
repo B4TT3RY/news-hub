@@ -8,8 +8,8 @@
 
 ### 공통
 
-- Node.js
-- TypeScript
+- [Node.js](https://nodejs.org)
+- [TypeScript](https://www.typescriptlang.org)
 
 ### 프론트엔드
 
@@ -19,7 +19,7 @@
 
 ### 백엔드
 
-- express
+- [express](https://expressjs.com)
 
 ## 지원 언론사
 
