@@ -16,10 +16,10 @@ const NewsItem: Component<Props> = (props) => {
         'flex flex-col'
       )}
     >
-      <span class='text-lg text-gray-100'>{props.title}</span>
+      <span class='text-lg text-gray-100 truncate'>{props.title}</span>
       <div class="flex justify-between text-sm text-gray-400">
-        <span>{props.provider}</span>
-        <span>{props.timestamp}</span>
+        <span class='truncate'>{props.provider}</span>
+        <span class='truncate'>{props.timestamp}</span>
       </div>
     </div>
   );
