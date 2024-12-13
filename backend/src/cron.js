@@ -1,18 +1,18 @@
 import cron from 'node-cron';
-import { clients, broadcastMessage } from './app.js';
+import { ticker } from './ticker.js';
 
 export const startCron = () => {
   console.log('Cron started');
-  cron.schedule('*/2 * * * * *', async () => {
-    console.log(clients.size);
-    if (clients.size > 0) {
+  cron.schedule('*/1 * * * * *', async () => {
+    console.log(ticker.activeSessions.length);
+    if (ticker.activeSessions.length > 0) {
       const data = {
         timestamp: new Date(),
         text: `${Math.random()}`,
         id: new Date(),
       };
 
-      await broadcastMessage(data);
+      ticker.broadcast(data);
     }
   });
 };

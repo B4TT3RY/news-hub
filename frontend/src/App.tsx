@@ -24,7 +24,7 @@ const App = () => {
   createEffect(() => {
     setSSE(() =>
       createSSE({
-        url: 'http://localhost:3000/events',
+        url: 'http://localhost:3000/sse',
         messageHandler: (event) => {
           const newItem = JSON.parse(event.data);
           setItems((prev) => [newItem, ...prev]);
