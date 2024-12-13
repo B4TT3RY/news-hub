@@ -12,7 +12,7 @@ const NewsItem: Component<Props> = (props) => {
     <div
       class={clsx(
         'group-item',
-        'p-4 rounded bg-gray-800 hover:bg-gray-700',
+        'p-4 rounded bg-gray-800 hover:bg-gray-700 cursor-pointer',
         'flex flex-col'
       )}
     >

@@ -1,0 +1,20 @@
+/* 전체 스크롤바 스타일 */
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 스크롤바 트랙 스타일 */
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 스크롤바 핸들 스타일 */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 6px;
+}
+
+/* 스크롤바 핸들 호버 스타일 */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
