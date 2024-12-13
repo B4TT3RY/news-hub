@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import '/App.css';
+import './App.css';
 import Header from '@/components/Header';
 import NewsList from '@/components/NewsList';
 import Container from '@/components/Container';
