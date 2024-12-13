@@ -9,7 +9,7 @@ interface Props {
 const NewsList: Component<Props> = (props) => {
   return (
     <TransitionGroup name='group-item'>
-      <For each={props.news}>{(item) => <NewsItem title={item.text} timestamp={item.id} />}</For>
+      <For each={props.news}>{(item) => <NewsItem provider='테스트' title={item.text} timestamp={item.id} />}</For>
     </TransitionGroup>
   );
 };
