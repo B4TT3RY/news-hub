@@ -1,8 +1,9 @@
 import express from 'express';
 import { startCron } from './cron.js';
 import cors from 'cors';
-import { createSession } from "better-sse";
-import { ticker } from "./ticker.js";
+import { createSession } from 'better-sse';
+import { ticker } from './ticker.js';
+import * as scrapers from './scrapers/index.js';
 
 const app = express();
 
@@ -11,9 +12,15 @@ app.use(cors());
 
 app.get('/sse', async (req, res) => {
   const session = await createSession(req, res);
-  session.push("Connected", "ping");
+  session.push('Connected', 'ping');
+
+  if (scrapers.cache.length === 0) {
+    await scrapers.initializeCache();
+  }
+
+  session.push(scrapers.cache, 'message');
   ticker.register(session);
-  
+
   session.on('disconnect', () => {
     ticker.unregister(session);
   });

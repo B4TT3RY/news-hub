@@ -1,27 +1,41 @@
 import clsx from 'clsx';
 import { Component } from 'solid-js';
+import Tag from './Tag';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 interface Props {
   provider: string;
   title: string;
+  link: string;
   timestamp: string;
 }
 
 const NewsItem: Component<Props> = (props) => {
+  const formattedDate = dayjs(props.timestamp)
+    .tz('Asia/Seoul')
+    .format('YYYY-MM-DD HH:mm:ss');
+
   return (
-    <div
+    <a
+      href={props.link}
+      target='_blank'
       class={clsx(
         'group-item',
-        'p-4 rounded bg-gray-800 hover:bg-gray-700 cursor-pointer',
-        'flex flex-col'
+        'px-3.5 py-3 rounded bg-gray-800 hover:bg-gray-700 cursor-pointer',
+        'flex flex-col gap-1'
       )}
     >
       <span class='text-lg text-gray-100 truncate'>{props.title}</span>
-      <div class="flex justify-between text-sm text-gray-400">
-        <span class='truncate'>{props.provider}</span>
-        <span class='truncate'>{props.timestamp}</span>
+      <div class='flex justify-between'>
+        <Tag color='blue'>{props.provider}</Tag>
+        <Tag color='lightGray'>{formattedDate}</Tag>
       </div>
-    </div>
+    </a>
   );
 };
 

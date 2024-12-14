@@ -6,6 +6,7 @@
 .group-item-exit-to {
   opacity: 0;
   transform: translateY(-50%);
+  transform: scale(0.9);
 }
 .group-item-exit-active {
   position: absolute;
