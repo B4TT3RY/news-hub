@@ -5,6 +5,7 @@ const Container: Component<{ children: JSXElement }> = (props) => {
   return (
     <div
       class={clsx(
+        'supports-[width: 100dvw]:w-[100dvw] supports-[height:100dvh]:h-[100dvh]',
         'w-screen h-screen',
         'flex flex-col',
         'bg-gray-900 py-4',
