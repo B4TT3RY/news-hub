@@ -9,7 +9,7 @@ const Container: Component<{ children: JSXElement }> = (props) => {
         'w-screen h-screen',
         'flex flex-col',
         'bg-gray-900 py-4',
-        'px-8 md:px-24 2xl:px-72'
+        'px-5 md:px-24 2xl:px-72'
       )}
     >
       {props.children}
