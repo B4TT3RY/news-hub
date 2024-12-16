@@ -5,8 +5,8 @@ const Tag: Component<{
   children: JSXElement;
 }> = (props) => {
   const styles = {
-    blue: 'bg-blue-500/20 text-blue-200',
-    lightGray: 'bg-gray-400/20 text-gray-300',
+    blue: 'bg-blue-500/30 text-blue-200',
+    lightGray: 'bg-gray-400/30 text-gray-300',
   };
 
   return (
