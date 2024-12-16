@@ -8,12 +8,15 @@ export async function getNews() {
   });
   const feed = await parser.parseURL('https://www.yna.co.kr/rss/news.xml');
 
-  const items = feed.items.map((item) => ({
-    provider: '연합뉴스',
-    title: item.title,
-    link: item.link,
-    pubDate: new Date(item.pubDate),
-  })).splice(0, 10);
+  const items = feed.items
+    .map((item) => ({
+      provider: '연합뉴스',
+      title: item.title,
+      link: item.link,
+      pubDate: new Date(item.pubDate),
+    }))
+    .filter((item) => !item.title.startsWith('[인사]'))
+    .splice(0, 10);
 
   return items;
 }
