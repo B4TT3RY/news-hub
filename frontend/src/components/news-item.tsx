@@ -30,7 +30,7 @@ const NewsItem: Component<Props> = (props) => {
         'flex flex-col gap-1'
       )}
     >
-      <span class='text-lg text-gray-100 truncate'>{props.title}</span>
+      <span class='text-lg text-gray-100 font-medium truncate'>{props.title}</span>
       <div class='flex justify-between'>
         <Tag color='blue'>{props.provider}</Tag>
         <Tag color='lightGray'>{formattedDate}</Tag>
