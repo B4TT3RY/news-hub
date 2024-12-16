@@ -1,7 +1,7 @@
 import * as yonhapNews from './yonhapnews.js';
 import * as ytn from './ytn.js';
 
-export let cache = [];
+export const cache = [];
 
 export const initializeCache = async () => {
   cache.push(...(await yonhapNews.getNews()));
