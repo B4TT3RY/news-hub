@@ -26,7 +26,7 @@ const NewsItem: Component<Props> = (props) => {
       target='_blank'
       class={clsx(
         'group-item',
-        'px-3.5 py-3 rounded bg-gray-700 hover:bg-gray-600 cursor-pointer',
+        'px-3.5 py-3 rounded bg-gray-800 hover:bg-gray-700 cursor-pointer',
         'flex flex-col gap-1'
       )}
     >
