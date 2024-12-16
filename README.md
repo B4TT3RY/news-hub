@@ -6,13 +6,9 @@
 
 ## 기술 스택
 
-### 공통
-
-- [Node.js](https://nodejs.org)
-- [TypeScript](https://www.typescriptlang.org)
-
 ### 프론트엔드
 
+- [TypeScript](https://www.typescriptlang.org)
 - [Vite](https://vite.dev)
 - [Solid.js](https://www.solidjs.com)
 - [TailwindCSS](https://tailwindcss.com)
@@ -20,6 +16,10 @@
 ### 백엔드
 
 - [express](https://expressjs.com)
+- [better-sse](https://matthewwid.github.io/better-sse)
+- [cheerio](https://cheerio.js.org/)
+- [rss-parser](https://www.npmjs.com/package/rss-parser)
+- [node-cron](https://www.npmjs.com/package/node-cron)
 
 ## 지원 언론사
 
