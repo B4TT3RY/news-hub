@@ -31,7 +31,7 @@ const App = () => {
       <Header />
       <main class='flex flex-col flex-1 h-full overflow-y-auto'>
         <div
-          class={`flex-1 space-y-2 overflow-x-hidden overflow-y-auto h-full ${scrollbarStyle.scrollbar}`}
+          class={`flex-1 space-y-2 overflow-x-hidden overflow-y-auto h-full ${scrollbarStyle.scrollbar} pr-1`}
         >
           <NewsList news={items()} />
         </div>
