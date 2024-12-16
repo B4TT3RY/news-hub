@@ -12,9 +12,8 @@ export async function getNews() {
     provider: '연합뉴스',
     title: item.title,
     link: item.link,
-    author: item.creator,
     pubDate: new Date(item.pubDate),
-  }));
+  })).splice(0, 10);
 
   return items;
 }
