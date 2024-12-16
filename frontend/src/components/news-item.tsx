@@ -32,7 +32,10 @@ const NewsItem: Component<Props> = (props) => {
     >
       <span class='text-lg text-gray-100 font-medium truncate'>{props.title}</span>
       <div class='flex justify-between'>
-        <Tag color='blue'>{props.provider}</Tag>
+        <div class='flex gap-2'>
+          <Tag color='blue'>{props.provider}</Tag>
+          {props.title.startsWith('[속보]') && <Tag color='red'>속보</Tag>}
+        </div>
         <Tag color='lightGray'>{formattedDate}</Tag>
       </div>
     </a>
