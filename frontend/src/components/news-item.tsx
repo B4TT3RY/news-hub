@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { Component } from 'solid-js';
-import Tag from './Tag';
+import Tag from './tag';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';

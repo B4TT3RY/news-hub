@@ -1,12 +1,10 @@
-import '@/styles/App.css';
-
 import { createEffect, createSignal, onCleanup } from 'solid-js';
-import Header from '@/components/Header';
-import NewsList from '@/components/NewsList';
-import Container from '@/components/Container';
+import Header from '@/components/header';
+import NewsList from '@/components/news-list';
+import Container from '@/components/container';
 import scrollbarStyle from '@/styles/scrollbar.module.css';
 import createSSE from '@/utils/sse';
-import { INewsItem } from '@/types/NewsItem';
+import { INewsItem } from '@/types/news-item';
 
 const App = () => {
   const [items, setItems] = createSignal<INewsItem[]>([]);

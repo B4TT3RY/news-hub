@@ -1,7 +1,9 @@
+import '@/styles/news-list.css';
+
 import { Component, For } from 'solid-js';
 import { TransitionGroup } from 'solid-transition-group';
-import NewsItem from '@/components/NewsItem';
-import { INewsItem } from '@/types/NewsItem';
+import NewsItem from '@/components/news-item';
+import { INewsItem } from '@/types/news-item';
 
 interface Props {
   news: INewsItem[];
