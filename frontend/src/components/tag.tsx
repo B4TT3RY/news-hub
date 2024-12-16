@@ -5,7 +5,7 @@ const Tag: Component<{
   children: JSXElement;
 }> = (props) => {
   const styles = {
-    blue: 'bg-blue-500/20 text-blue-400',
+    blue: 'bg-blue-500/20 text-blue-200',
     lightGray: 'bg-gray-400/20 text-gray-300',
   };
 
@@ -13,7 +13,7 @@ const Tag: Component<{
     <span
       class={`${
         styles[props.color]
-      } bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium truncate`}
+      } px-3 py-1 rounded-full text-sm font-medium truncate`}
     >
       {props.children}
     </span>
