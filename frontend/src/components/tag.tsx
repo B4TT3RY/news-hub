@@ -1,12 +1,11 @@
 import { Component, JSXElement } from 'solid-js';
 
 const Tag: Component<{
-  color: 'blue' | 'teal' | 'lightGray';
+  color: 'blue' | 'lightGray';
   children: JSXElement;
 }> = (props) => {
   const styles = {
     blue: 'bg-blue-500/20 text-blue-400',
-    teal: 'bg-teal-500/20 text-teal-400',
     lightGray: 'bg-gray-400/20 text-gray-300',
   };
 
