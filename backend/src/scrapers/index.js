@@ -1,21 +1,22 @@
 import * as yonhapNews from './yonhapnews.js';
+import * as ytn from './ytn.js';
 
-export const cache = [];
+export let cache = [];
 
 export const initializeCache = async () => {
   cache.push(...(await yonhapNews.getNews()));
-  cache.sort((a, b) => new Date(b.date) - new Date(a.date));
+  cache.push(...(await ytn.getNews()));
+  cache.sort((a, b) => b.pubDate - a.pubDate);
 };
 
 export const updateCache = async () => {
   const previousCache = Array.from(cache);
 
-  const news = [...(await yonhapNews.getNews())];
-
+  const news = [...(await yonhapNews.getNews()), ...(await ytn.getNews())];
   const diff = findDiff(previousCache, news);
 
   cache.push(...diff);
-  cache.sort((a, b) => new Date(b.date) - new Date(a.date));
+  cache.sort((a, b) => b.pubDate - a.pubDate);
 
   return diff;
 };
