@@ -1,15 +1,10 @@
 import { Component, For } from 'solid-js';
 import { TransitionGroup } from 'solid-transition-group';
-import NewsItem from './NewsItem';
+import NewsItem from '@/components/NewsItem';
+import { INewsItem } from '@/types/NewsItem';
 
 interface Props {
-  news: Array<{
-    provider: string;
-    title: string;
-    link: string;
-    author: string;
-    pubDate: string;
-  }>;
+  news: INewsItem[];
 }
 
 const NewsList: Component<Props> = (props) => {
@@ -17,7 +12,12 @@ const NewsList: Component<Props> = (props) => {
     <TransitionGroup name='group-item'>
       <For each={props.news}>
         {(item) => (
-          <NewsItem provider={item.provider} title={item.title} link={item.link} timestamp={item.pubDate} />
+          <NewsItem
+            provider={item.provider}
+            title={item.title}
+            link={item.link}
+            timestamp={item.pubDate}
+          />
         )}
       </For>
     </TransitionGroup>
