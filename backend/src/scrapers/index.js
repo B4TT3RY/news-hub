@@ -14,7 +14,11 @@ export const initializeCache = async () => {
 export const updateCache = async () => {
   const previousCache = Array.from(cache);
 
-  const news = [...(await yonhapNews.getNews()), ...(await ytn.getNews()), ...(await sbsnews.getNews())];
+  const news = [
+    ...(await yonhapNews.getNews()),
+    ...(await ytn.getNews()),
+    ...(await sbsnews.getNews()),
+  ];
   const diff = findDiff(previousCache, news);
 
   cache.push(...diff);
@@ -24,7 +28,7 @@ export const updateCache = async () => {
 };
 
 function findDiff(a, b) {
-  const existingLinks = new Set(a.map(item => item.link));
-  const diff = b.filter(item => !existingLinks.has(item.link));
+  const existingLinks = new Set(a.map((item) => item.link));
+  const diff = b.filter((item) => !existingLinks.has(item.link));
   return diff;
 }
