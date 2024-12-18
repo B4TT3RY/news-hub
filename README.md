@@ -8,7 +8,7 @@
 
 5분정도 녹화 되었습니다.
 
-[시연 영상](assets/시연영상.webm)
+![시연 영상](assets/output.gif)
 
 ## 기술 스택
 
