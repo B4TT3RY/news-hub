@@ -6,9 +6,9 @@
 
 ## 시연
 
-5분정도 녹화 후 자른 편집된 영상입니다.
+5분정도 녹화 되었습니다.
 
-<video controls src="assets/시연영상.mp4" title="시연 영상"></video>
+[시연 영상](assets/시연영상.webm)
 
 ## 기술 스택
 
