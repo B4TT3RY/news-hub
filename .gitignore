@@ -21,3 +21,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 뭔가 생성되는데 뭔지 모르겠음..
+
+core
